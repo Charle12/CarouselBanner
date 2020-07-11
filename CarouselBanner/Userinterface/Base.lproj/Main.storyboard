@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--CarouselVC-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="CarouselVC" customModule="CarouselBanner" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="hPN-QF-e0y" customClass="CarouselBannerView" customModule="CarouselBanner" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="333" width="414" height="240"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="240" id="kuD-QD-7o8"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="j7J-bo-HLY">
+                                    <size key="itemSize" width="414" height="240"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="bc6-tZ-FNE" customClass="CarouselBannerCVC" customModule="CarouselBanner" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="240"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="240"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="saS-di-XjE">
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="240"/>
+                                                    <subviews>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="banner" translatesAutoresizingMaskIntoConstraints="NO" id="sjv-fP-wKs">
+                                                            <rect key="frame" x="0.0" y="0.0" width="414" height="240"/>
+                                                        </imageView>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstAttribute="trailing" secondItem="sjv-fP-wKs" secondAttribute="trailing" id="J1H-V7-oGI"/>
+                                                        <constraint firstItem="sjv-fP-wKs" firstAttribute="leading" secondItem="saS-di-XjE" secondAttribute="leading" id="kap-yI-knv"/>
+                                                        <constraint firstItem="sjv-fP-wKs" firstAttribute="top" secondItem="saS-di-XjE" secondAttribute="top" id="mC6-iz-RPo"/>
+                                                        <constraint firstAttribute="bottom" secondItem="sjv-fP-wKs" secondAttribute="bottom" id="sVn-To-DzU"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="saS-di-XjE" secondAttribute="trailing" id="Hk3-Ww-Kfr"/>
+                                            <constraint firstItem="saS-di-XjE" firstAttribute="top" secondItem="bc6-tZ-FNE" secondAttribute="top" id="Mdv-fx-mNk"/>
+                                            <constraint firstItem="saS-di-XjE" firstAttribute="leading" secondItem="bc6-tZ-FNE" secondAttribute="leading" id="Spc-sK-uWu"/>
+                                            <constraint firstAttribute="bottom" secondItem="saS-di-XjE" secondAttribute="bottom" id="kjB-Cf-Ws7"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="mainView" destination="saS-di-XjE" id="2mG-m1-FIM"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="inset">
+                                        <real key="value" value="44"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="uwp-uw-nuY"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="GTq-7G-3Wz"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="hPN-QF-e0y" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="IaJ-It-Qh3"/>
+                            <constraint firstItem="hPN-QF-e0y" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="p7n-X8-r3w"/>
+                            <constraint firstItem="hPN-QF-e0y" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="sRV-AS-Hi5"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="carousel" destination="hPN-QF-e0y" id="1Xg-2k-S21"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="87.723214285714278"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="banner" width="536" height="397"/>
+    </resources>
+</document>
